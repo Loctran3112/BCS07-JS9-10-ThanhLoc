@@ -31,7 +31,7 @@ function renderGiaoDien() {
         <td>${nhanVien.ngayLam}</td>
     	<td>${nhanVien.chucVu}</td>
         <td>${tongTienLuong.toLocaleString('vi', { style: 'currency', currency: 'VND' })}</td>
-    	<td></td>${xepLoai}</td>
+    	<td>${xepLoai}</td>
         <td>
         <button onclick="xoaNhanVien('${nhanVien.tKhoan}')" class="btn btn-danger me-3"><i class="fa-solid fa-trash"></i></button>
         <button onclick="editNhanVien('${nhanVien.tKhoan}')" class="btn btn-warning"><i class="fa-solid fa-wrench"></i></button>
@@ -44,8 +44,19 @@ function renderGiaoDien() {
 }
 function themNhanVien() {
     var nhanVien = layGiaTriInput();
+    // var valid = true;
+    valid =
+        kiemTraRong(_tKhoan, 'tbTkhoan') &
+        kiemTraRong(_hoTen, 'tbTenNV') &
+        kiemTraRong(_email, 'tbEmail') &
+        kiemTraRong(_matKhau, 'tbPass') &
+        kiemTraRong(_ngayLam, 'tbNgayLam') &
+        kiemTraRong(_luongCB, 'tbLuongCB') &
+        kiemTraRong(_chucVu, 'tbChucVu') &
+        kiemTraRong(_gioLam, 'tbGioLam');
+    console.log(valid);
     // sẽ check nếu như nhanVien bị undifined sẽ chặn hết các hành động bên dưới
-    if (nhanVien) {
+    if (valid == true) {
         arrNhanVien.push(nhanVien);
         // lưu trữ xuống localStorage
         saveStorage(arrNhanVien);
