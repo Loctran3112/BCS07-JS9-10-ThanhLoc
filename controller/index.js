@@ -44,19 +44,8 @@ function renderGiaoDien() {
 }
 function themNhanVien() {
     var nhanVien = layGiaTriInput();
-    // var valid = true;
-    valid =
-        kiemTraRong(_tKhoan, 'tbTkhoan') &
-        kiemTraRong(_hoTen, 'tbTenNV') &
-        kiemTraRong(_email, 'tbEmail') &
-        kiemTraRong(_matKhau, 'tbPass') &
-        kiemTraRong(_ngayLam, 'tbNgayLam') &
-        kiemTraRong(_luongCB, 'tbLuongCB') &
-        kiemTraRong(_chucVu, 'tbChucVu') &
-        kiemTraRong(_gioLam, 'tbGioLam');
-    console.log(valid);
     // sẽ check nếu như nhanVien bị undifined sẽ chặn hết các hành động bên dưới
-    if (valid == true) {
+    if (nhanVien) {
         arrNhanVien.push(nhanVien);
         // lưu trữ xuống localStorage
         saveStorage(arrNhanVien);
