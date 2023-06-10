@@ -8,6 +8,10 @@
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- FontAwesome 6.2.0 CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<!-- Bootstrap 4 -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -197,6 +201,7 @@
 								</div>
 								<input type="text" name="tk" id="tknv" class="form-control input-sm"
 									placeholder="Tài khoản">
+								<p id="tbTkhoan" class="text-danger m-1"></p>
 							</div>
 
 							<span class="sp-thongbao" id="tbTKNV"></span>
@@ -207,8 +212,9 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-address-book"></i></span>
 								</div>
-								<input type="name" name="name" id="name" class="form-control input-sm"
+								<input type="text" name="name" id="name" class="form-control input-sm"
 									placeholder="Họ và tên">
+								<p id="tbTenNV" class="text-danger m-1"></p>
 							</div>
 							<span class="sp-thongbao" id="tbTen"></span>
 						</div>
@@ -220,6 +226,7 @@
 								</div>
 								<input type="email" name="email" id="email" class="form-control input-sm"
 									placeholder="Email">
+								<p id="tbEmail" class="text-danger m-1"></p>
 							</div>
 
 							<span class="sp-thongbao" id="tbEmail"></span>
@@ -232,6 +239,7 @@
 								</div>
 								<input type="password" name="password" id="password" class="form-control input-sm"
 									placeholder="Mật khẩu">
+								<p id="tbPass" class="text-danger m-1"></p>
 							</div>
 							<span class="sp-thongbao" id="tbMatKhau"></span>
 						</div>
@@ -243,6 +251,7 @@
 								</div>
 								<input type="text" name="ngaylam" id="datepicker" class="form-control"
 									placeholder="Ngày làm">
+								<p id="tbNgayLam" class="text-danger m-1"></p>
 							</div>
 
 							<span class="sp-thongbao" id="tbNgay"></span>
@@ -255,6 +264,7 @@
 								</div>
 								<input type="text" name="luongCB" id="luongCB" class="form-control input-sm"
 									placeholder="Lương cơ bản">
+								<p id="tbLuongCB" class="text-danger m-1"></p>
 							</div>
 							<span class="sp-thongbao" id="tbLuongCB"></span>
 						</div>
@@ -263,12 +273,13 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-briefcase"></i></span>
 								</div>
-								<select class="form-control" id="chucvu">
-									<option>Chọn chức vụ</option>
-									<option>Sếp</option>
-									<option>Trưởng phòng</option>
-									<option>Nhân viên</option>
+								<select class="form-control" id="chucvu" name="option">
+									<option value="">Chọn chức vụ</option>
+									<option value="CV001">Sếp</option>
+									<option value="CV002">Trưởng phòng</option>
+									<option value="CV003">Nhân viên</option>
 								</select>
+								<p id="tbChucVu" class="text-danger m-1"></p>
 							</div>
 
 							<span class="sp-thongbao" id="tbChucVu"></span>
@@ -279,8 +290,9 @@
 									<span class="input-group-text"><i class="fa fa-clock-o"
 											aria-hidden="true"></i></span>
 								</div>
-								<input type="text" name="gioLam" id="gioLam" class="form-control input-sm"
+								<input type="number" name="gioLam" id="gioLam" class="form-control input-sm"
 									placeholder="Giờ làm">
+								<p id="tbGioLam" class="text-danger m-1"></p>
 							</div>
 							<span class="sp-thongbao" id="tbGiolam"></span>
 						</div>
@@ -291,7 +303,8 @@
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
 					<button id="btnThemNV" type="button" class="btn btn-success">Thêm người dùng</button>
-					<button id="btnCapNhat" type="button" class="btn btn-success">Cập nhật</button>
+					<button id="btnCapNhat" type="button" style="display:none;" class="btn btn-success">Cập
+						nhật</button>
 					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 
@@ -326,7 +339,10 @@
 			});
 		});
 	</script>
-	<script src="./js/index.js"></script>
+	<script src="./models/nhanVien.js"></script>
+	<script src="./controller/helper.js"></script>
+	<script src="./controller/validation.js"></script>
+	<script src="./controller/index.js"></script>
 </body>
 
 </html>
