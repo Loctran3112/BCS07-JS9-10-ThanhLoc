@@ -44,6 +44,13 @@ function layGiaTriInput() {
         kiemTraRong(_luongCB, 'tbLuongCB') &
         kiemTraRong(_chucVu, 'tbChucVu') &
         kiemTraRong(_gioLam, 'tbGioLam');
+
+    valid = KiemTraEmail(_email, 'tbEmail');
+    valid = kiemTraChucVu(_chucVu, 'tbChucVu');
+    valid = checkName(_hoTen, 'tbTenNV');
+    valid =
+        checkNumber(_luongCB, 'tbLuongCB') &
+        checkNumber(_gioLam, 'tbGioLam');
     // ở đây chúng ta kiểm tra biến valid,nếu valid là false sẽ return không chạy những đoạn lệnh bên dưới
     if (!valid) {
         return;

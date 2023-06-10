@@ -105,7 +105,7 @@ function editNhanVien(tKhoan) {
 // cập nhật lại thông tin
 function capNhatThongTinNhanVien() {
     var nhanVienDaChinhSua = layGiaTriInput();
-    console.log(nhanVienDaChinhSua);
+    // console.log(nhanVienDaChinhSua);
     var index = timVitriNhanVien(nhanVienDaChinhSua.tKhoan);
     // sau khi tìm được vị trí index của phần tử đang chỉnh sửa trong mảng, chúng ta sẽ làm 1 việc là thay thế phần tử đó trong mảng bằng giá trị mới
     arrNhanVien[index] = nhanVienDaChinhSua;
